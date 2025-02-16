@@ -1,0 +1,16 @@
+{
+    "name": "my-nodejs-project",
+    "version": "1.0.0",
+    "description": "Azure Speech SDK using Node.js",
+    "main": "src/index.js",
+    "type": "module",
+    "scripts": {
+        "fast": "node src/index.js"
+    },
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "microsoft-cognitiveservices-speech-sdk": "^1.42.0"
+    },
+    "author": "",
+    "license": "ISC"
+}
