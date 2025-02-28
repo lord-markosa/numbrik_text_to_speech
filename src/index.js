@@ -4,13 +4,11 @@ import {
     SpeechSynthesizer,
     ResultReason,
 } from "microsoft-cognitiveservices-speech-sdk";
-import readline from "readline";
 import config from "./config/env.js";
+import fs from "fs";
 
-// const sdk = require("microsoft-cognitiveservices-speech-sdk");
-// const readline = require("readline");
-
-const audioFile = "YourAudioFile.wav";
+const textFile = "input.txt";
+const audioFile = "Preview.mp3";
 
 const speechConfig = SpeechConfig.fromSubscription(
     config.speechKey,
@@ -25,14 +23,12 @@ speechConfig.speechSynthesisVoiceName = "en-US-AdamMultilingualNeural";
 // Create the speech synthesizer.
 let synthesizer = new SpeechSynthesizer(speechConfig, audioConfig);
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
+fs.readFile(textFile, "utf8", function (err, text) {
+    if (err) {
+        console.error("Error reading file: " + err);
+        return;
+    }
 
-rl.question("Enter some text that you want to speak >\n> ", function (text) {
-    rl.close();
-    // Start the synthesizer and wait for a result.
     synthesizer.speakTextAsync(
         text,
         function (result) {
@@ -54,5 +50,6 @@ rl.question("Enter some text that you want to speak >\n> ", function (text) {
             synthesizer = null;
         }
     );
+
     console.log("Now synthesizing to: " + audioFile);
 });

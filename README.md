@@ -2,6 +2,8 @@
 
 This is a basic Node.js project that demonstrates how to set up a simple application with environment variables and npm package management.
 
+This uses Azure Speech service.
+
 ## Table of Contents
 
 -   [Installation](#installation)
@@ -14,13 +16,13 @@ This is a basic Node.js project that demonstrates how to set up a simple applica
 1. Clone the repository:
 
     ```
-    git clone <repository-url>
+    git clone https://github.com/lord-markosa/numbrik_text_to_speech.git
     ```
 
 2. Navigate to the project directory:
 
     ```
-    cd speech
+    cd <whatever>
     ```
 
 3. Install the dependencies:
@@ -33,7 +35,7 @@ This is a basic Node.js project that demonstrates how to set up a simple applica
 To start the application, run the following command:
 
 ```
-npm start
+npm run fast
 ```
 
 This will execute the `index.js` file located in the `src` directory.
@@ -43,8 +45,8 @@ This will execute the `index.js` file located in the `src` directory.
 Create a `.env` file in the root directory of the project and define your environment variables in the format `KEY=VALUE`. For example:
 
 ```
-PORT=3000
-DB_URI=mongodb://localhost:27017/mydatabase
+SPEECH_KEY = <YOUR_AZ_SPEECH_KEY>
+SPEECH_REGION = <YOUR_AZ_SPEECH_REGION>
 ```
 
 These variables can be accessed throughout the application using the `dotenv` package.
