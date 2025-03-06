@@ -1,3 +1,5 @@
 node_modules
 .env
-Preview.mp3
+*.wav
+*.mp3
+input.txt
