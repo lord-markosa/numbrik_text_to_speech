@@ -5,7 +5,10 @@
     "main": "src/index.js",
     "type": "module",
     "scripts": {
-        "fast": "node src/index.js"
+        "fast": "node src/index.js",
+        "fast:ssml": "node src/index.js --ssml",
+        "fast:precheck": "node src/index.js --precheck",
+        "fast:ssml:precheck": "node src/index.js --ssml --precheck"
     },
     "dependencies": {
         "dotenv": "^10.0.0",
