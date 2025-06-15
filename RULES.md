@@ -23,3 +23,7 @@
     </voice>
 </speak>
 ```
+
+## Caution
+
+Don't use prosody rate="slow", use rate="medium"
